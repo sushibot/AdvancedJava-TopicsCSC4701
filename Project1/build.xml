@@ -1,0 +1,15 @@
+<project name="Project1" default="jar"  basedir=".">
+
+<target name="compile">
+  <javac srcdir="edu" destdir="classes" includes="**" debug="on">
+  </javac>
+</target>
+
+<target name="jar" depends="compile">
+    <jar jarfile="project1.jar" basedir="classes">
+      <manifest>
+        <attribute name="Main-Class" value="edu.hpu.gfontan1.Project1.Project1"/>
+      </manifest>
+    </jar>
+</target>
+</project>
