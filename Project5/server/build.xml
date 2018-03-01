@@ -1,0 +1,16 @@
+<project default="jar" basedir=".">
+
+  <!-- Compile the .java files into .class files -->
+  <target name="compile">
+    <javac srcdir="src" destdir="classes" includes="**" debug="on">
+    </javac>
+  </target>
+  <!-- Create the .jar file form the .classes files -->
+  <target name="jar" depends="compile">
+    <jar jarfile="server.jar" basedir="classes">
+      <manifest>
+        <attribute name="Main-Class" value="hpu.edu.gfontan1.serialServer.Server" />
+      </manifest>
+    </jar>
+  </target>
+</project>
